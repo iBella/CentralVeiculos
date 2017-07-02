@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  
+    <link rel="stylesheet" href="~/Styles/css/bootstrap.css"/>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="~/Styles/css/materialize.min.css"  media="screen,projection"/>
+    
+    <script src="~/Scripts/js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/js/main.js" ></script>
+
+	<style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+		main {
+		    flex: 1 0 auto;
+		}
+		.margin-desafio {
+            margin-right: 40px;
+            margin-left: 40px;
+		}
+	</style>
+		
+</head>
+<body>
+	<header>
+		<nav role="navigation">
+			<div class="nav-wrapper black">
+	            <span class="brand-logo margin-desafio">Grupo Otimiza - Desafio</span>
+	            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li id="linkHome" style="background: orange;"><a class="white-text" href="/Home/Index">Home</a></li>
+                    <li id="linkCadastro"><a class="white-text" href="/Cadastro/Cadastro">Cadastrar</a></li>
+	            </ul>
+	        </div>
+	    </nav>
+	</header>
+
+	<main>
+	    <div class="container">
+	        <div id="conteudo">
+	            @RenderBody()
+	        </div>
+	    </div>
+	</main>
+		
+	<footer class="page-footer grey lighten-3">
+	    <div class="margin-desafio">
+	        <div class="row">
+	            <div class="col l6 s12">
+	                <h5 class="grey-text">Desafio - Grupo Otimiza</h5>
+	                <p class="grey-text text-darken-4">
+	                    Oferecer soluções adequadas, criativas e inovadoras, 
+	                    com qualidade e eficiência alinhadas a crescente evolução 
+	                    tecnológica, visando sempre o aumento de produtividade e 
+	                    competitividade de nossos clientes.</p>
+	            </div>
+	            <div class="col l4 offset-l2 s12">
+	                <h5 class="grey-text">Links</h5>
+	                <ul>
+	                    <li><a class="grey-text text-darken-4" href="https://www.linkedin.com/in/isabella-isaac-fernandes-86638262/">Linkedin</a></li>
+                        <li><a class="grey-text text-darken-4" href="/Home/Curriculo">Currículo</a></li>
+                    </ul>
+	            </div>
+	        </div>
+	   </div>
+	    <div class="footer-copyright black">
+	       <div class="margin-desafio">
+                <span class="grey-text text-lighten-4 right">Isabella Isaac Fernandes  -  © 2017</span>
+            </div>
+	    </div>
+	</footer>
+		
+</body>
+</html>

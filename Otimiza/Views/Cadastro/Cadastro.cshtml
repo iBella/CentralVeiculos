@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h3>Cadastro de Veículos</h3>
+        <form action="/Cadastro/Adiciona" method="post">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label>Placa:</label>
+                        <input class="form-control" placeholder="AAA-0000" name='veiculo.placa' id="placa" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Tipo de veículo:</label>
+                        <select style="display:block;" name="veiculo.tipo" id="tipo" required>
+                            <option value="" disabled selected>Escolha</option>
+                            <option value="Motocicleta">Motocicleta</option>
+                            <option value="Automóvel">Automóvel</option>
+                            <option value="Microônibus">Microônibus</option>
+                            <option value="Ônibus">Ônibus</option>
+                            <option value="Caminhão">Caminhão</option>
+                            <option value="Caminhão-Trator">Caminhão-Trator</option>
+                            <option value="Caminhonete">Caminhonete</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Proprietário:</label>
+                    <input class="form-control" placeholder="Digite o nome do proprietário" name='veiculo.proprietario' id="proprietario" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="fotos">
+                    <a class="btn-floating btn-small waves-effect wafes-light black">
+                        <i class="material-icons">perm_media</i>
+                    </a>
+                </div>
+            </div>
+            <div class="pull-right">
+                <input class="waves-effect amber darken-3 btn" type="submit" value="Salvar">
+                <a class="waves-effect amber darken-3 btn" href="">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

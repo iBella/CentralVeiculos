@@ -1,0 +1,31 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h3>Lista de Veículos</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="hidden">Identificador</th>
+                    <th>Placa</th>
+                    <th>Tipo Veículo</th>
+                    <th>Proprietário</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var veiculo in ViewBag.Veiculos)
+                {
+                    <tr>
+                        <td class="hidden" id="idVeiculo">@veiculo.ID</td>
+                        <td>@veiculo.Placa</td>
+                        <td>@veiculo.Tipo</td>
+                        <td>@veiculo.Proprietario</td>
+                        <td>
+                            <a href="/Visualizar/Visualizar/@veiculo.ID" title="Editar Veículo"><i style="color:grey;" class="material-icons">edit</i></a> |
+                            <a href="/Cadastro/Remove/@veiculo.ID" title="Remover Veículo"><i style="color:grey;" class="material-icons">delete</i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

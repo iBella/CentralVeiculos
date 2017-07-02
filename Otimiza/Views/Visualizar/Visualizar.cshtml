@@ -1,0 +1,48 @@
+﻿<div class="row">
+    <div class="col-md-12 card-panel teal grey lighten-3">
+        <form action="/Cadastro/Atualiza" method="post">
+            <input class="hidden" value="@ViewBag.Veiculo.ID" name="veiculo.ID" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row" style="background:white;color:black;padding: 10px 10px 10px 10px;">
+                        <span><strong> PLACA </strong></span>
+                    </div>
+                    <div class="row">
+                        <input value="@ViewBag.Veiculo.Placa" name="veiculo.placa" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row" style="background:white;color:black;padding: 10px 10px 10px 10px;">
+                        <span><strong> TIPO DE VEÍCULO </strong></span>
+                    </div>
+                    <div class="row">
+                        <select style="display:block;" name="veiculo.tipo" id="tipo">
+                            <option value="Motocicleta">Motocicleta</option>
+                            <option value="Automóvel">Automóvel</option>
+                            <option value="Microônibus">Microônibus</option>
+                            <option value="Ônibus">Ônibus</option>
+                            <option value="Caminhão">Caminhão</option>
+                            <option value="Caminhão-Trator">Caminhão-Trator</option>
+                            <option value="Caminhonete">Caminhonete</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="background:white;color:black;padding: 10px 10px 10px 10px;">
+                <span><strong> PROPRIETÁRIO </strong></span>
+            </div>
+            <div class="row">
+                <input value="@ViewBag.Veiculo.Proprietario" name="veiculo.proprietario" />
+            </div>
+            <div class="row" style="background:white;color:black;padding: 10px 10px 10px 10px;">
+                <span><strong> GALERIA </strong></span>
+            </div>
+            <div class="row">
+
+            </div>
+            <div class="pull-right">
+                <input class="waves-effect amber darken-3 btn" type="submit" value="Salvar">
+            </div>
+        </form>
+    </div>
+</div>
