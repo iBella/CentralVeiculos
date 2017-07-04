@@ -14,6 +14,10 @@ namespace Otimiza.Controllers
     {
         public ActionResult Cadastro()
         {
+            TipoVeiculoDAO dao = new TipoVeiculoDAO();
+            IList<TipoVeiculo> tipos = dao.Lista();
+            ViewBag.TiposVeiculo = tipos;
+
             return View();
         }
 
@@ -23,7 +27,8 @@ namespace Otimiza.Controllers
             Veiculo novoVeiculo = new Veiculo()
             {
                 Placa = veiculo.Placa,
-                Tipo = veiculo.Tipo,
+                NomeTipo = veiculo.NomeTipo,
+                TipoVeiculo = veiculo.TipoVeiculo,
                 Proprietario = veiculo.Proprietario,
                 Fotos = veiculo.Fotos
             };
@@ -41,7 +46,8 @@ namespace Otimiza.Controllers
             {
                 ID = veiculo.ID,
                 Placa = veiculo.Placa,
-                Tipo = veiculo.Tipo,
+                NomeTipo = veiculo.NomeTipo,
+                TipoVeiculo = veiculo.TipoVeiculo,
                 Proprietario = veiculo.Proprietario,
                 Fotos = veiculo.Fotos
             };

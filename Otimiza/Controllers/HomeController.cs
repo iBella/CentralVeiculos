@@ -23,5 +23,24 @@ namespace Otimiza.Controllers
         {
             return View();
         }
+
+        public ActionResult CadastrarTipoVeiculo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdicionaTipoVeiculo(TipoVeiculo tipo)
+        {
+            TipoVeiculo novoTipo = new TipoVeiculo()
+            {
+                Nome = tipo.Nome
+            };
+
+            TipoVeiculoDAO dao = new TipoVeiculoDAO();
+            dao.Adiciona(novoTipo);
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

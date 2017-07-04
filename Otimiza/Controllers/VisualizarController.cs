@@ -14,9 +14,13 @@ namespace Otimiza.Controllers
     {
         public ActionResult Visualizar(int id)
         {
-            VeiculoDAO dao = new VeiculoDAO();
-            ViewBag.Veiculo = dao.BuscaPorId(id);
-            
+            VeiculoDAO daoVeiculo = new VeiculoDAO();
+            ViewBag.Veiculo = daoVeiculo.BuscaPorId(id);
+
+            TipoVeiculoDAO daoTipo = new TipoVeiculoDAO();
+            IList<TipoVeiculo> tipos = daoTipo.Lista();
+            ViewBag.TiposVeiculo = tipos;
+
             return View();
         }
 

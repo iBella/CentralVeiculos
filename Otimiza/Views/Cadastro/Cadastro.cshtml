@@ -10,15 +10,11 @@
                     </div>
                     <div class="col-md-6">
                         <label>Tipo de veículo:</label>
-                        <select style="display:block;" name="veiculo.tipo" id="tipo" required>
+                        <select style="display:block;" name="veiculo.nomeTipo" required>
                             <option value="" disabled selected>Escolha</option>
-                            <option value="Motocicleta">Motocicleta</option>
-                            <option value="Automóvel">Automóvel</option>
-                            <option value="Microônibus">Microônibus</option>
-                            <option value="Ônibus">Ônibus</option>
-                            <option value="Caminhão">Caminhão</option>
-                            <option value="Caminhão-Trator">Caminhão-Trator</option>
-                            <option value="Caminhonete">Caminhonete</option>
+                            @foreach (var tipo in ViewBag.TiposVeiculo) { 
+                                <option value="@tipo.Nome">@tipo.Nome</option>
+                            }
                         </select>
                     </div>
                 </div>

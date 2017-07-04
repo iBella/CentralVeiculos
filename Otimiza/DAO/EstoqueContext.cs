@@ -11,5 +11,6 @@ namespace Otimiza.DAO
     {
         public DbSet<Veiculo> Veiculos { get; set; }
         public DbSet<Foto> Fotos { get; set; }
+        public DbSet<TipoVeiculo> TiposVeiculo { get; set; }
     }
 }

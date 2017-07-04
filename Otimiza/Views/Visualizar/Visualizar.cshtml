@@ -16,14 +16,12 @@
                         <span><strong> TIPO DE VEÍCULO </strong></span>
                     </div>
                     <div class="row">
-                        <select style="display:block;" name="veiculo.tipo" id="tipo">
-                            <option value="Motocicleta">Motocicleta</option>
-                            <option value="Automóvel">Automóvel</option>
-                            <option value="Microônibus">Microônibus</option>
-                            <option value="Ônibus">Ônibus</option>
-                            <option value="Caminhão">Caminhão</option>
-                            <option value="Caminhão-Trator">Caminhão-Trator</option>
-                            <option value="Caminhonete">Caminhonete</option>
+                        <select style="display:block;" name="veiculo.tipo" id="tipo" required>
+                            <option value="" disabled selected>Escolha</option>
+                            @foreach (var tipo in ViewBag.TiposVeiculo)
+                            {
+                                <option value="@tipo.ID">@tipo.Nome</option>
+                            }
                         </select>
                     </div>
                 </div>
