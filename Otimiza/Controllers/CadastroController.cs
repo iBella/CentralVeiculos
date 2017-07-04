@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Otimiza.DAO;
 using Otimiza.Models;
+using System.Drawing;
+using System.IO;
 
 namespace Otimiza.Controllers
 {
@@ -56,6 +58,20 @@ namespace Otimiza.Controllers
             dao.Remove(id);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public byte[] imageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
     }
 }

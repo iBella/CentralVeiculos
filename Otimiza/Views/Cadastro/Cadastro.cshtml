@@ -1,4 +1,4 @@
-﻿<div class="row">
+﻿<div class="row" ng-controller="Cadastrar">
     <div class="col-md-12">
         <h3>Cadastro de Veículos</h3>
         <form action="/Cadastro/Adiciona" method="post">
@@ -31,9 +31,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12" id="fotos">
-                    <a class="btn-floating btn-small waves-effect wafes-light black">
+                    <div class="btn-floating btn-small waves-effect wafes-light black">
                         <i class="material-icons">perm_media</i>
-                    </a>
+                        <input type="file" multiple />
+                    </div>
                 </div>
             </div>
             <div class="pull-right">

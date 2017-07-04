@@ -1,4 +1,4 @@
-﻿<div class="row">
+﻿<div class="row" ng-controller="Visualizar">
     <div class="col-md-12 card-panel teal grey lighten-3">
         <form action="/Cadastro/Atualiza" method="post">
             <input class="hidden" value="@ViewBag.Veiculo.ID" name="veiculo.ID" />
@@ -37,11 +37,13 @@
             <div class="row" style="background:white;color:black;padding: 10px 10px 10px 10px;">
                 <span><strong> GALERIA </strong></span>
             </div>
-            <div class="row">
-
+            <div class="panel panel-default col-md-2" ng-repeat="foto in fotos">
+                <div class="panel-body">
+                    <img class="img-responsive center-block" src="data:image/png;base64,{{foto.url}}" />
+                </div>
             </div>
             <div class="pull-right">
-                <input class="waves-effect amber darken-3 btn" type="submit" value="Salvar">
+                <input class="waves-effect amber darken-3 btn" type="submit" value="Salvar" />
             </div>
         </form>
     </div>
