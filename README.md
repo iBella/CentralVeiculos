@@ -6,20 +6,10 @@
 3) SGBD: Microsoft SQL Server: Entity-Framework-SQLServer;
 4) Padrão de desenvolvimento: MVC;
 
-- 3 telas:
--> Home: Lista veículos
- Placa, Tipo Veículo e Proprietário.
--> Cadastro: Cadastra veículos
- Placa, Tipo Veículo, Proprietário, Fotos
- A lista “Tipo Veículo”
-A - Motocicleta
-B - Automóvel
-C - Microônibus
-D - Ônibus
-E - Caminhão
-F - Caminhão-Trator
-G - Caminhonete
--> Visualizar: Edita e visualiza os dados do veículo
+- Telas:
+1) Home: Lista veículos (Placa, Tipo Veículo e Proprietário)
+2) Cadastro: Cadastra veículos (Placa, Tipo Veículo, Proprietário, Fotos, Lista de “Tipo Veículo”) - Lista de “Tipo Veículo”: (Motocicleta, Automóvel, Microônibus, Ônibus, Caminhão, Caminhão-Trator, Caminhonete)
+3) Visualizar: Edita e visualiza os dados do veículo
 
 ***( FALTA )***
 1) A lista “Tipo Veículo” deverá estar armazenada em banco de dados e deverá conter os registros: Codigo (int), Nome (varchar 50)
