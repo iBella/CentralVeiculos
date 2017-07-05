@@ -44,6 +44,15 @@ namespace Otimiza.DAO
             }
         }
 
+
+        public IList<Foto> ListaFotoVeiculo(int idVeiculo)
+        {
+            using (var contexto = new EstoqueContext())
+            {
+                return contexto.Fotos.Where(p => p.IdVeiculo == idVeiculo).ToList();
+            }
+        }
+
         public void Remove(int id)
         {
             using (var contexto = new EstoqueContext())

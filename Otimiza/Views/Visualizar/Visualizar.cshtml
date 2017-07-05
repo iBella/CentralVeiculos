@@ -18,9 +18,13 @@
                     <div class="row">
                         <select style="display:block;" name="veiculo.tipo" id="tipo" required>
                             <option value="" disabled selected>Escolha</option>
-                            @foreach (var tipo in ViewBag.TiposVeiculo)
-                            {
-                                <option value="@tipo.ID">@tipo.Nome</option>
+                            @foreach (var tipo in ViewBag.TiposVeiculo) {
+                                if (ViewBag.Veiculo.NomeTipo == tipo.Nome)
+                                {
+                                    <option value="@tipo.ID" selected>@tipo.Nome</option>
+                                } else {
+                                    <option value="@tipo.ID">@tipo.Nome</option>
+                                }
                             }
                         </select>
                     </div>
@@ -35,10 +39,15 @@
             <div class="row" style="background:white;color:black;padding: 10px 10px 10px 10px;">
                 <span><strong> GALERIA </strong></span>
             </div>
-            <div class="panel panel-default col-md-2" ng-repeat="foto in fotos">
-                <div class="panel-body">
-                    <img class="img-responsive center-block" src="data:image/png;base64,{{foto.url}}" />
-                </div>
+            <div class="row">
+                @foreach (var foto in @ViewBag.Foto)
+                {
+                    <div class="panel panel-default col-md-2">
+                        <div class="panel-body">
+                            <img class="img center-block" alt="@foto.Nome" src="../@foto.Nome" />
+                        </div>
+                    </div>
+                }
             </div>
             <div class="pull-right">
                 <input class="waves-effect amber darken-3 btn" type="submit" value="Salvar" />

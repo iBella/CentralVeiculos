@@ -21,25 +21,21 @@ namespace Otimiza.Controllers
             IList<TipoVeiculo> tipos = daoTipo.Lista();
             ViewBag.TiposVeiculo = tipos;
 
-            return View();
-        }
-
-        public ActionResult Fotos(int id)
-        {
-            VeiculoDAO dao = new VeiculoDAO();
-            ViewBag.Veiculo = dao.BuscaPorId(id);
+            FotoDAO daoFoto = new FotoDAO();
+            IList<Foto> fotos = daoFoto.ListaFotoVeiculo(id);
+            ViewBag.Foto = fotos;
 
             return View();
         }
 
-        public byte[] imageToByteArray(Image imageIn)
+        public byte[] ImageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             return ms.ToArray();
         }
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
+        public Image ByteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
             Image returnImage = Image.FromStream(ms);

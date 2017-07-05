@@ -6,20 +6,21 @@
                 <div class="col-md-12">
                     <div class="col-md-6">
                         <label>Placa:</label>
-                        <input class="form-control" placeholder="AAA-0000" name='veiculo.placa' id="placa" required>
+                        <input class="form-control" pattern="[A-Z]{3}[-][0-9]{4}" title="Formato exigido: AAA-0000" placeholder="AAA-0000" name='veiculo.placa' id="placa" required>
                     </div>
                     <div class="col-md-6">
                         <label>Tipo de veículo:</label>
                         <select style="display:block;" name="veiculo.nomeTipo" required>
                             <option value="" disabled selected>Escolha</option>
-                            @foreach (var tipo in ViewBag.TiposVeiculo) { 
+                            @foreach (var tipo in ViewBag.TiposVeiculo)
+                            {
                                 <option value="@tipo.Nome">@tipo.Nome</option>
                             }
                         </select>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="padding: 10px 10px 10px 10px;">
                 <div class="col-md-12">
                     <label>Proprietário:</label>
                     <input class="form-control" placeholder="Digite o nome do proprietário" name='veiculo.proprietario' id="proprietario" required>
@@ -27,12 +28,15 @@
             </div>
             <div class="row">
                 <div class="col-md-12" id="fotos">
-                    <div class="btn-floating btn-small waves-effect wafes-light black">
-                        <i class="material-icons">perm_media</i>
-                        <input type="file" multiple />
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="file" name="fotos[]" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" multiple />
+                        </div>
                     </div>
                 </div>
             </div>
+
+
             <div class="pull-right">
                 <input class="waves-effect amber darken-3 btn" type="submit" value="Salvar">
                 <a class="waves-effect amber darken-3 btn" href="">Cancelar</a>

@@ -202,6 +202,8 @@
     <Content Include="App_Data\DBEstoque_log.ldf">
       <DependentUpon>DBEstoque.mdf</DependentUpon>
     </Content>
+    <Content Include="Image\IsabellaIsaac-1.jpg" />
+    <Content Include="Image\IsabellaIsaac-2.jpg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -959,6 +961,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Styles\css\bootstrap.css" />
+    <Content Include="Styles\css\main.css" />
     <Content Include="Styles\css\materialize.min.css" />
     <Content Include="Scripts\js\main.js" />
     <Content Include="Global.asax" />
