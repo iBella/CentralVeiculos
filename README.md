@@ -13,4 +13,4 @@
 
 ***( FALTA )***
 
-Carregar e converter imagem para byte, por enquanto guarda somente os nomes da imagem. A classe, o banco e o DAO já estão feitos.
+Carregar e converter imagem para byte, por enquanto guarda somente os nomes das imagens. A classe, o banco e o DAO já estão feitos.
