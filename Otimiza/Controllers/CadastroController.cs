@@ -20,10 +20,10 @@ namespace Otimiza.Controllers
 
             return View();
         }
+        
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Adiciona(FormCollection f, Veiculo veiculo) {
 
-        [HttpPost]
-        public ActionResult Adiciona(Veiculo veiculo, String [] fotos)
-        {
             Veiculo novoVeiculo = new Veiculo()
             {
                 Placa = veiculo.Placa,
@@ -34,12 +34,21 @@ namespace Otimiza.Controllers
             VeiculoDAO dao = new VeiculoDAO();
             dao.Adiciona(novoVeiculo);
 
-            for (int i = 0; i < fotos.Length; i++) {
+            for (int i = 0; i < Request.Files.Count; i++)
+            {
                 Foto novaFoto = new Foto()
                 {
-                    Nome = fotos[i],
+                    Nome = Request.Files[i].FileName,
                     IdVeiculo = novoVeiculo.ID
                 };
+
+                if (Request.Files.Count > 0 && Request.Files[i].FileName != "")
+                {
+                    int tamanho = (int)Request.Files[i].InputStream.Length;
+                    byte[] arq = new byte[tamanho];
+                    Request.Files[i].InputStream.Read(arq, 0, tamanho);
+                    novaFoto.Imagem = arq;
+                }
 
                 FotoDAO daoFoto = new FotoDAO();
                 daoFoto.Adiciona(novaFoto);
@@ -51,18 +60,8 @@ namespace Otimiza.Controllers
         [HttpPost]
         public ActionResult Atualiza(Veiculo veiculo)
         {
-            Veiculo atualizaVeiculo = new Veiculo()
-            {
-                ID = veiculo.ID,
-                Placa = veiculo.Placa,
-                NomeTipo = veiculo.NomeTipo,
-                TipoVeiculo = veiculo.TipoVeiculo,
-                Proprietario = veiculo.Proprietario,
-                Fotos = veiculo.Fotos
-            };
-
             VeiculoDAO dao = new VeiculoDAO();
-            dao.Atualiza(atualizaVeiculo);
+            dao.Atualiza(veiculo);
 
             return RedirectToAction("Index", "Home");
         }
@@ -74,19 +73,6 @@ namespace Otimiza.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
-        public byte[] ImageToByteArray(Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            return ms.ToArray();
-        }
-
-        public Image ByteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
     }
 }
+ 

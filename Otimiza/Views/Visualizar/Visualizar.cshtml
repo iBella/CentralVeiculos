@@ -16,14 +16,14 @@
                         <span><strong> TIPO DE VEÍCULO </strong></span>
                     </div>
                     <div class="row">
-                        <select style="display:block;" name="veiculo.tipo" id="tipo" required>
+                        <select style="display:block;" name="veiculo.nomeTipo" id="tipo" required>
                             <option value="" disabled selected>Escolha</option>
                             @foreach (var tipo in ViewBag.TiposVeiculo) {
                                 if (ViewBag.Veiculo.NomeTipo == tipo.Nome)
                                 {
-                                    <option value="@tipo.ID" selected>@tipo.Nome</option>
+                                    <option value="@tipo.Nome" selected>@tipo.Nome</option>
                                 } else {
-                                    <option value="@tipo.ID">@tipo.Nome</option>
+                                    <option value="@tipo.Nome">@tipo.Nome</option>
                                 }
                             }
                         </select>
@@ -40,11 +40,11 @@
                 <span><strong> GALERIA </strong></span>
             </div>
             <div class="row">
-                @foreach (var foto in @ViewBag.Foto)
+                @for (var i = 0; i < @ViewBag.Tam; i++)
                 {
                     <div class="panel panel-default col-md-2">
                         <div class="panel-body">
-                            <img class="img center-block" alt="@foto.Nome" src="../@foto.Nome" />
+                            <img class="img center-block" style="height: auto; width: auto; max-width: 100px; max-height: 100px;" src="data:image/png;base64,@ViewBag.StringFoto[i]" />
                         </div>
                     </div>
                 }

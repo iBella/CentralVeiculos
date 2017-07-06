@@ -24,6 +24,17 @@ namespace Otimiza.Controllers
             FotoDAO daoFoto = new FotoDAO();
             IList<Foto> fotos = daoFoto.ListaFotoVeiculo(id);
             ViewBag.Foto = fotos;
+            IList<String> stringFotos = new List<String>();
+            if (fotos.Count > 0)
+            {
+                for (int i = 0; i < fotos.Count; i++)
+                {
+                    stringFotos.Add(Convert.ToBase64String(fotos[i].Imagem));
+                }
+                ViewBag.StringFoto = stringFotos;
+            }
+
+            ViewBag.Tam = fotos.Count;
 
             return View();
         }

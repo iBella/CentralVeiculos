@@ -1,7 +1,7 @@
 ﻿<div class="row" ng-controller="Cadastrar">
     <div class="col-md-12">
         <h3>Cadastro de Veículos</h3>
-        <form action="/Cadastro/Adiciona" method="post">
+        <form action="/Cadastro/Adiciona" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-6">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12" id="fotos">
+                <div class="col-md-12">
                     <div class="form-group">
                         <div class="col-md-10">
                             <input type="file" name="fotos[]" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" multiple />
